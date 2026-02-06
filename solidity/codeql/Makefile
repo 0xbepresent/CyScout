@@ -17,6 +17,6 @@ build-extractor: copy-solidity
 	cd  $(CODEQL_PATH)/solidity && make extractor
 
 create-dbs: build-extractor
-	cd solidity-test && ./create-dbs.sh
+	cd $(CODEQL_PATH)/solidity/solidity-test && ./create-dbs.sh
 
 full-install: build-extractor create-dbs install-for-vscode
